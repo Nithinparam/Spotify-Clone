@@ -1,0 +1,26 @@
+<div class="ArtistDetail">
+  <div>
+    <img [src]="artDet.images[0]?.url" alt="" width="200px" height="200px">
+  </div>
+  <div style="margin: 50px;">
+    <h1>{{artDet.name}}</h1>
+    <h2>followers {{artDet.followers.total|number}}
+    </h2>
+  </div>
+  <button (click)="goBack()">Back</button>
+</div>
+<div class="Results" *ngIf="data;else notok">
+  <div class="SingleRes" *ngFor="let item of data;index as i">
+    <div *ngIf="item.images[0]?.url">
+      <img src="{{item.images[0]?.url}}" alt="" width="200px" height="200px" (click)="callTracks(item.id,i)">
+      <p class="title">{{item.name}}</p>
+      <p>Total Tracks {{item.total_tracks}}</p>
+    </div>
+    <div class="TrackPlay" *ngIf="idset && ind===i">
+      <app-tracks [id]='albumId'></app-tracks>
+    </div>
+  </div>
+</div>
+<ng-template #notok>
+  <div class="loader">Loaidng</div>
+</ng-template>

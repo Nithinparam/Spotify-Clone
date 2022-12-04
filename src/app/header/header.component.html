@@ -1,0 +1,11 @@
+<div class="header">
+  <div class="header_left" *ngIf="enable">
+    <span ><i class="fas fa-search"></i></span>
+    <input type="text" placeholder="Search for Artists, Songs or Podcasts" [(ngModel)]="SearchData"
+    (keyup)="OnSubmit()">
+  </div>
+  <div class="header_right">
+    <img class="Avatar" src="{{profile?.images[0]?.url}}" alt="{{profile?.display_name}}">
+    <h4>{{profile?.display_name}}</h4>
+  </div>
+</div>

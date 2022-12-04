@@ -1,0 +1,7 @@
+<div class="Player">
+  <div class="playbody">
+    <app-sidebar></app-sidebar>
+    <app-body (newItemEvent)="addTrack($event)"></app-body>
+  </div>
+  <app-footer [sngsrc]='NewTrackId'></app-footer>
+</div>

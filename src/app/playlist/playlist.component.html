@@ -1,0 +1,34 @@
+<div class="body_info">
+  <img src="{{playlist?.images[0]?.url}}" alt="{{playlist?.name}}">
+</div>
+<div class="body_infoText">
+  <h2>{{playlist?.name}}</h2>
+  <p>{{playlist?.description}}</p>
+</div>
+<hr>
+
+<!-- {{playlist?.tracks.items[0].track.name|json}} -->
+<div class="songs" *ngIf="playlist.tracks.total!=0;else noSong">
+  <div *ngFor="let songs of playlist?.tracks?.items;index as i">
+    <div class="singlesong" (click)="addNewTrackId(songs.track.id)">
+      <p> {{i+1}}</p>
+      <div class="song_artist">
+        <h3>{{songs.track?.name}}</h3>
+        <h6>
+          <span *ngFor="let art of songs.track.artists">
+       {{art.name}}
+      </span>
+        </h6>
+      </div>
+
+      <h4>{{songs.track?.album?.name}}</h4>
+    </div>
+
+  </div>
+
+</div>
+<ng-template #noSong>
+  <div class="songs">
+    <h3>No Songs are added</h3>
+  </div>
+</ng-template>

@@ -1,0 +1,11 @@
+<div class="TracksList" *ngIf="data;else notok">
+  <div class="SingleList" *ngFor="let item of data">
+    <p class="title">{{item.name}}</p>
+    <button (click)="playsong(item.id)">Play</button>
+    <!-- <audio controls src="{{item.preview_url}}"></audio> -->
+
+  </div>
+</div>
+<ng-template #notok>
+  <div class="loader">Loading...</div>
+</ng-template>

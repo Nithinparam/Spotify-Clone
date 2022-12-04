@@ -1,0 +1,23 @@
+<div class="sidebar">
+  <img class="sidebar_logo"
+src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png"
+alt="" height="70px"
+/>
+  <div class="sidebarOption">
+    <li>
+      <a routerLink="/home"><span><i class="fas fa-home"></i></span>Home
+      </a>
+    </li>
+    <li><a routerLink="search"><span><i class="fas fa-search"></i></span> Search</a></li>
+    <li><span><i class="fas fa-book-reader"></i></span> Your Library</li>
+  </div>
+  <strong class="sidebar_title">PLAYLISTS</strong>
+  <hr>
+  <div class="sidebarOption">
+    <div *ngFor="let item of playlists">
+      <p>
+        <a routerLink="playlists/{{item.id}}">{{item.name}}</a>
+      </p>
+    </div>
+  </div>
+</div>

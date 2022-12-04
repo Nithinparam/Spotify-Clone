@@ -1,0 +1,48 @@
+.body_info {
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+}
+.body_info > img {
+  height: 20vw;
+  width: 250px;
+  margin: 0 20px;
+  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+}
+.body_infoText {
+  flex: 1;
+}
+.body_infoText > h2 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+.body_infoText > p {
+  font-size: 14px;
+}
+.songs {
+  display: flex;
+  flex-direction: column;
+}
+.singlesong {
+  display: flex;
+  flex-direction: row;
+  margin: 2px;
+  justify-content: space-between;
+  flex: 0.3;
+  cursor: pointer;
+  transition: 100ms all ease-in;
+}
+.singlesong:hover {
+  background-color: rgba(130, 175, 212, 0.575);
+}
+.song_artist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.song_artist > h3 {
+  margin-bottom: 0;
+}
+.song_artist > h6 {
+  margin-top: 0;
+}
